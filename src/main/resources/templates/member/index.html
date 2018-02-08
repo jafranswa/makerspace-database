@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+    <div class="form-group">
+        <form method="post" style="..." th:object="${member}">
+            <label th:for="name">New Member Name</label>
+            <input class="form-control" th:field="*{name}" />
+            <input type="submit" value="add to membership" />
+        </form>
+    </div>
+    <ul th:each="member : ${members}">
+        <li th:text = "${member.name}"></li>
+    </ul>
+
+<p th:unless="${members} and ${members.size()}">I think you should do some recruiting.</p>
+</body>
+</html>
