@@ -3,6 +3,7 @@ package org.archreactor.makerspacemvc.models.forms;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Member {
@@ -12,6 +13,10 @@ public class Member {
     @Id
     @GeneratedValue
     private Integer id;
+
+    //started to make object relationship
+    //@ManyToOne
+    //private Member member;
 
     //constructors
     public Member () {} //used by Hibernate in the process of creating objects from data retrieved from the database
