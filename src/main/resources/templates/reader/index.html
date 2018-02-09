@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<div class="form-group">
+    <form method="post" style="..." th:object="${reader}">
+        <label th:for="name">New Reader Location</label>
+        <input class="form-control" th:field="*{name}" />
+        <input type="submit" value="add card reader" />
+    </form>
+</div>
+<ul th:each="reader : ${readers}">
+    <li th:text = "${reader.name}"></li>
+</ul>
+
+<p th:unless="${readers} and ${readers.size()}">Man this place is lookin perdy empty.</p>
+</body>
+</html>
