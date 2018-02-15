@@ -1,9 +1,7 @@
 package org.archreactor.makerspacemvc.models.forms;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Member {
@@ -14,9 +12,8 @@ public class Member {
     @GeneratedValue
     private Integer id;
 
-    //started to make object relationship
-    //@ManyToOne
-    //private Member member;
+    @ManyToMany(mappedBy = "members")
+    private List<Reader> readers;
 
     //constructors
     public Member () {} //used by Hibernate in the process of creating objects from data retrieved from the database

@@ -3,6 +3,8 @@ package org.archreactor.makerspacemvc.models.forms;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.List;
 
 @Entity
 public class Reader {
@@ -13,6 +15,8 @@ public class Reader {
     @GeneratedValue
     private Integer Id;
 
+    @ManyToMany
+    private List<Member> members;
     //constructors
     public Reader() { } //used by Hibernate in the process of creating objects from data retrieved from the database
 
